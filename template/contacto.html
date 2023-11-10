@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Contacto{% endblock %}
+{% block head %}{% endblock%}
+{% block content %}
+
+<article class="contenedor_1">
+
+    <div class="item1"><img src="{% static './Img/foto2.JPG' %}" alt="fotos" class="foto">
+        <p>Saint Burger abre sus puertas el 6 de agosto de 2016 con una propuesta clara, ofrecer un producto de
+            primera calidad y un buen servicio. Un espacio para pasar un buen momento, disfrutar de una exquicita
+            comida, buena musica y buena onda.
+        </p>
+
+    </div>
+    <div class="item1"><img src="{% static 'Img/foto_institucional_2.JPG'%}" alt="fotos" class="foto">
+        <p>El bar esta ambientado con murales, tiene mesas comunitarias e individules, tambien hay mesas en la
+            vereda. Es un ambiente ideal para reuniones de amigos o trabajo </p>
+    </div>
+</article>  
+
+
+<div class="mess_form">
+    {% for message in messages %}
+        <div> <h2>{{ message.tags }}
+            {{ message }}</h2>
+        </div>
+    {% endfor %}
+
+
+    <form method="" action="{% url 'contacto'  %}">
+          {% csrf_token %}
+          {{ formulario_contacto.as_ul }} 
+
+   <!--  <div class="">
+        {% if formulario.non_field_errors %}
+      </div>  
+          <div class="">
+            {{ formulario.non_field_errors }}
+          </div>
+        {% endif %} -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+        <input type="submit" value="Enviar mensaje">
+    </form>
+</div>
+
+
+
+{% endblock %}
+

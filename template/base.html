@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <link rel="icon" href="{% static 'Img/Icono2.ico' %}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/3_cac_home_normalize.css' %}">
+    <title>Saint Burger</title>
+    <link rel="stylesheet" href="{% url 'index'% }">
+    <link rel="stylesheet" href="{% static 'css/Iconos/style.css'  %}">
+    <link rel="stylesheet" href="{% static 'css/2_index.css' %}">
+
+    <!--MENSAJE EN CONSOLA-->
+
+    <script>
+        var mensaje = ("tp 1")
+        console.log(mensaje);
+        var alumno = new Object()
+        alumno.nombre = 'Walter'
+        alumno.apellido = 'Frias'
+        alumno.curso = 'Codo a Codo Django'
+        alumno.comicion = '23654'
+        console.log('Alumno :', alumno.nombre, alumno.apellido, '.', ' ', 'Cursando', alumno.curso, 'Comición', alumno.comicion)
+    </script>
+    {% block head %}
+    {% endblock %}
+</head>
+
+<body>
+  <!--HEADER-->
+
+  <header id="Grid_header">
+    <section id="arriba">
+        <div class="Flex__Cointainer">
+            <div class="Flex__Cointainer Titulo">
+                <a href="{% url 'index' %}"><img src="{% static 'Img/Logo2.png'%}" width="50" alt="Logo"></a>
+                <h4><a href="{% url 'index' %}" id="SB">SAINT BURGER</a></h4>
+            </div>
+            <span class="Menu__icon icon-menu3"></span>
+
+            <nav class="Flex__Cointainer Menu">
+                <ul>
+                    
+                    <li class="Nav__li"><a href="{% url 'burgers' %}" Target="_blank">Burgers</a></li>
+                    <li class="Nav__li"><a href="{% url 'contacto' %}" Target="_blank">Contacto</a></li>
+                    <li class="Nav__li"><a href="{% url 'reservas' %}" Target="_blank">Reservas</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </section>
+</header>
+{% block content %}{% endblock %}
+
+
+<footer id="footer">
+
+    <ul class="Flex__Cointainer" id="Redes">
+        <li class="Redes__item"><a href="https://www.facebook.com/profile.php?id=100055273845013"
+                Target="_blank"><span class="icon-facebook2"></span></a></li>
+        <li class="Redes__item"><a href="https://instagram.com/saint.burger?igshid=YmMyMTA2M2Y="
+                Target="_blank"><span class="icon-instagram"></span></a></li>
+        <li class="Redes__item"><a href="" Target="_blank"><span class="icon-whatsapp"></span></a></li>
+        <li class="Redes__item"><a href="https://github.com/codoacodo-unidad-1/Proyecto_SaintBuger_grupo2.git"
+                Target="_blank"><span class="icon-github"></span></a></li>
+
+    </ul>
+
+</footer>
+<script src="{% static 'js/script_menu_span' %}"></script>
+
+
+{% block javascript %}{% endblock %}
+
+</body>
+
+</html>
